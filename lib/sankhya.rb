@@ -4,7 +4,7 @@ require "sankhya/numbers"
 
 module Sankhya
   def to_words(options = {})
-    Numbers::translate self, nil #, options[:scale]
+    Numbers::translate self, options[:scale]
   end
 end
 
