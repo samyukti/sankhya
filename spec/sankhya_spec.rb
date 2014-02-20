@@ -66,4 +66,47 @@ describe Sankhya do
     (2071432997924.58).to_words.should eql(["two lakh, seven thousand, one hundred and forty three crore, twenty nine lakh, ninety seven thousand, nine hundred and twenty four", "fifty eight"])
   end
 
+  # it "converts 22,99,11,123,45,67,890.76 to words" do
+  #   (2299111234567890.76).to_words.should eql(["twenty two crore, ninety nine lakh, eleven thousand, one hundred and twenty three crore, forty five lakh, sixty seven thousand, eight hundred and ninety", "seventy six"])
+  # end
+
+  it "converts 21,89,14,967,50,95,052.8 to words" do
+    (2189149675095052.8).to_words.should eql(["twenty one crore, eighty nine lakh, fourteen thousand, nine hundred and sixty seven crore, fifty lakh, ninety five thousand and fifty two", "eighty"])
+  end
+
+  it "converts 10,10,110.10 to words without comma" do
+    (1010110.10).to_words(comma: false).should eql(["ten lakh ten thousand one hundred and ten", "ten"])
+  end
+
+  it "converts 10,10,110.10 to words without comma, if comma option is a truthy value" do
+    (1010110.10).to_words(comma: "false").should eql(["ten lakh, ten thousand, one hundred and ten", "ten"])
+  end
+
+  it "converts 10,10,110.10 to words with scale -2" do
+    (1010110.10).to_words(scale: -2).should eql(["ten lakh, ten thousand, one hundred and ten", "zero"])
+  end
+
+  it "converts 10,10,110.10 to words with scale -1" do
+    (1010110.10).to_words(scale: -1).should eql(["ten lakh, ten thousand, one hundred and ten", "zero"])
+  end
+
+  it "converts 10,10,110.10 to words with scale 0" do
+    (1010110.10).to_words(scale: 0).should eql(["ten lakh, ten thousand, one hundred and ten", "zero"])
+  end
+
+  it "converts 10,10,110.10 to words with scale 2, if scale option is an invalid value" do
+    (1010110.10).to_words(scale: "one").should eql(["ten lakh, ten thousand, one hundred and ten", "ten"])
+  end
+
+  it "converts 10,10,110.10 to words with scale 1" do
+    (1010110.10).to_words(scale: 1).should eql(["ten lakh, ten thousand, one hundred and ten", "one"])
+  end
+
+  it "converts 10,10,110.10 to words with scale 2" do
+    (1010110.10).to_words(scale: 2).should eql(["ten lakh, ten thousand, one hundred and ten", "ten"])
+  end
+
+  it "converts 10,10,110.10 to words with scale 3" do
+    (1010110.10).to_words(scale: 3).should eql(["ten lakh, ten thousand, one hundred and ten", "one hundred"])
+  end
 end

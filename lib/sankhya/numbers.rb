@@ -3,20 +3,28 @@ module Sankhya
   class Numbers
     extend Words
 
-    def self.translate(number, scale)
-      scale ||= 2
+    def self.translate(number, options)
+      parse options
 
       if number.integer?
-        # integer
         words_of(number)
-      else
-        # float
-        numbers = number.to_s.split('.')
-        [words_of(numbers.first.to_i), words_of(numbers.last.ljust(scale,'0')[0..scale].to_i)]
+      else # if float
+        integer = number.floor
+        decimal = (number * (10 ** @scale)).floor - (integer * (10 ** @scale))
+        [words_of(integer), words_of(decimal)]
       end
     end
 
   private
+
+    def self.is_number?(number)
+      true if Float(number) rescue false
+    end
+
+    def self.parse(options)
+      @comma = options.has_key?(:comma) ? options[:comma] : true
+      @scale = is_number?(options[:scale]) ? ([options[:scale], 0].max) : 2
+    end
 
     def self.words_of(number)
       if number < 20
@@ -48,7 +56,8 @@ module Sankhya
           end
         end
 
-        words.reverse.join(' ').gsub(/, ,|,$/, '')
+        regex = @comma ? /, ,|,$/ : /, ,|,/
+        words.reverse.join(' ').gsub(/#{regex}/, '')
       end
     end
 
