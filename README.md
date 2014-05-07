@@ -18,7 +18,9 @@ Or install it yourself as:
 
 ## Usage
 
-Sankhya add a 'to_words' method to Integer and Float classes.
+Sankhya adds a couple of methods to Integer and Float classes.
+
+### to_words
 
     10101101.to_words    # "one crore, one lakh, one thousand, one hundred and one"
     0.to_words           # "zero"
@@ -27,6 +29,11 @@ Sankhya add a 'to_words' method to Integer and Float classes.
     1.1.to_words         # ["one", "one"]
     1.01.to_words        # ["one", "one"]
 
+### to_amount
+
+    10101101.to_amount   # "10,101,101"
+    10101.01.to_amount   # "10,101.01"
+    0.to_amount          # "0.00"
 
 Please see the spec for more examples.
 
