@@ -31,7 +31,7 @@ Sankhya adds a couple of methods to Integer and Float classes.
 
 ### to_amount
 
-    10101101.to_amount   # "10,101,101"
+    10101101.to_amount   # "10,101,101.00"
     10101.01.to_amount   # "10,101.01"
     0.to_amount          # "0.00"
 
