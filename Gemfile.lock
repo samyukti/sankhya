@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sankhya (0.2.0)
+    sankhya (0.3.0)
 
 GEM
   remote: https://rubygems.org/
