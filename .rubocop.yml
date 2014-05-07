@@ -1,0 +1,14 @@
+Documentation:
+  Enabled: false
+
+LineLength:
+  Max: 360
+
+WordArray:
+  MinSize: 8
+
+MethodLength:
+  Enabled: false
+
+CyclomaticComplexity:
+  Enabled: false
