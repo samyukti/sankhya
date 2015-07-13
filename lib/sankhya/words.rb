@@ -21,7 +21,6 @@ module Sankhya
         17 => 'seventeen',
         18 => 'eighteen',
         19 => 'nineteen',
-        10 =>  'ten',
         20 =>  'twenty',
         30 =>  'thirty',
         40 =>  'forty',
