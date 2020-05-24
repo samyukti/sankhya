@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'sankhya/version'
 require 'sankhya/words'
 require 'sankhya/numbers'

@@ -12,3 +12,6 @@ MethodLength:
 
 CyclomaticComplexity:
   Enabled: false
+
+RedundantParentheses:
+  Enabled: false
