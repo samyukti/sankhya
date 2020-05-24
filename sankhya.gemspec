@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.version       = Sankhya::VERSION
   spec.authors       = ['Geordee Naliyath']
   spec.email         = ['geordee@gmail.com']
-  spec.summary       = %q{A little gem to convert number to words in Indian English}
-  spec.description   = %q{Sankhya means numbers in Sanskrit and other Indian languages. This is a small gem to convert numbers to words in Indian English.}
+  spec.summary       = 'A little gem to convert number to words in Indian English'
+  spec.description   = 'Sankhya means numbers in Sanskrit and other Indian languages. This is a small gem to convert numbers to words in Indian English.'
   spec.homepage      = 'https://github.com/samyukti/sankhya'
   spec.license       = 'MIT'
 

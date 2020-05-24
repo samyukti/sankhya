@@ -15,3 +15,6 @@ CyclomaticComplexity:
 
 RedundantParentheses:
   Enabled: false
+
+MultilineHashBraceLayout:
+  Enabled: false

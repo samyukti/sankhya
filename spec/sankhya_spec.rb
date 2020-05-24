@@ -3,7 +3,6 @@
 require 'spec_helper'
 
 describe Sankhya do
-
   it 'converts 0 to words' do
     0.to_words.should eql('zero')
   end
