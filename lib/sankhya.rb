@@ -14,5 +14,5 @@ module Sankhya
   end
 end
 
-Integer.send :include, Sankhya
-Float.send :include, Sankhya
+Integer.include Sankhya
+Float.include Sankhya
