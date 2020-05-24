@@ -57,12 +57,12 @@ module Sankhya
             number, segment = number.divmod(units[i][:divisor])
             parts = segment < 20 ? segment.divmod(100) : segment.divmod(10)
 
-            words << units[i][:suffix]            if units[i][:suffix] && segment > 0
-            words << to_english(parts.last)       if parts.last > 0
-            words << to_english(10 * parts.first) if parts.first > 0
-            words << units[i][:prefix]            if units[i][:prefix] && segment > 0 && number > 0
+            words << units[i][:suffix]            if units[i][:suffix] && segment.positive?
+            words << to_english(parts.last)       if parts.last.positive?
+            words << to_english(10 * parts.first) if parts.first.positive?
+            words << units[i][:prefix]            if units[i][:prefix] && segment.positive? && number.positive?
 
-            if i == units.length - 1 && number > 0
+            if i == units.length - 1 && number.positive?
               # suffix crore and start over
               words << 'crore,'
               i = 0
